@@ -1,1 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: #303030;}
+
+mat-toolbar-row > span:nth-child(1) {
+  max-width: 52px;
+  margin-right: 5px;
+}
+
+.container-form {
+  padding: 2rem;
+  background-color: #303030;
+  color: white;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.example-icon {
+  cursor: pointer;
+}
+
+span > img {
+  max-width: 100%;
+}
+
+.row {
+  width: 100%
+}
+
+.options {
+  margin-top: 10px;
+  background-color: transparent !important;
+}

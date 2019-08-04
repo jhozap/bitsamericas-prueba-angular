@@ -1,0 +1,48 @@
+<div class="container-login">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>Login</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form class="example-form">
+        <table class="example-full-width" cellspacing="0">
+          <tr>
+            <td>
+              <mat-form-field class="example-full-width">
+                <input
+                  matInput
+                  [(ngModel)]="user"
+                  placeholder="Username"
+                  name="username"
+                  required
+                />
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <mat-form-field class="example-full-width">
+                <input
+                  matInput
+                  [(ngModel)]="password"
+                  placeholder="Password"
+                  type="password"
+                  name="password"
+                  required
+                />
+              </mat-form-field>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <div class="spinner">
+        <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+      </div>
+
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="login()">Login</button>
+      <button mat-raised-button color="secondary" (click)="spinner()">Cancel</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

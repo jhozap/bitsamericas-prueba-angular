@@ -8,14 +8,27 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material';
 import { MatIconModule } from '@angular/material/icon';
+import { FormsModule } from '@angular/forms';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { ToastrModule } from 'ngx-toastr';
+import { MemoryDataAlbumService } from './services/memory-db/memory-data.service';
 import { MainComponent } from './pages/main/main.component';
+import { AlbumComponent } from './pages/album/album.component';
+import { DetailComponent } from './pages/detail/detail.component';
+import { LoginComponent } from './pages/login/login.component';
+import { MemoryDataMusicService } from './services/memory-db/memory-data-music.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainComponent
+    MainComponent,
+    AlbumComponent,
+    DetailComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -23,10 +36,20 @@ import { MainComponent } from './pages/main/main.component';
     MatToolbarModule,
     MatFormFieldModule,
     MatButtonModule,
+    MatProgressSpinnerModule,
+    MatCardModule,
     MatMenuModule,
     MatIconModule,
+    FormsModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
+    HttpClientInMemoryWebApiModule.forRoot(
+      MemoryDataAlbumService, { dataEncapsulation: false }
+    ),
+    HttpClientInMemoryWebApiModule.forRoot(
+      MemoryDataMusicService, { dataEncapsulation: false }
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]

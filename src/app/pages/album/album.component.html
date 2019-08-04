@@ -1,0 +1,33 @@
+<mat-toolbar color="secondary">
+  <mat-toolbar-row>
+    <button mat-mini-fab color="primary" title="Reproducir">
+      <mat-icon>play_arrow</mat-icon>
+    </button>
+    &nbsp;
+    <button mat-mini-fab color="primary" title="Favoritos">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <span class="example-spacer"></span>
+    <button mat-mini-fab color="primary" [matMenuTriggerFor]="optionsAlbum">
+      <mat-icon>settings</mat-icon>
+    </button>
+    <mat-menu #optionsAlbum="matMenu">
+      <button mat-menu-item>
+        <mat-icon>visibility_off</mat-icon>
+        <span>Ocultar Album</span>
+      </button>
+    </mat-menu>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-card>
+  <mat-card-content>
+    <a href="">
+      <img
+        src=""
+        alt="Photo for example"
+      />
+    </a>
+    <p>Album: aaaaaaaaaaaaaaaaaaaaaa</p>
+    <p>Artista: aaaaaaaaaaaaaaaaaa</p>
+  </mat-card-content>
+</mat-card>

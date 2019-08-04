@@ -1,49 +1,60 @@
 <!-- Toolbar Principal -->
 <mat-toolbar color="secondary">
-    <mat-toolbar-row>
-      <span>
-        <img src="../../../assets/img/Spotify.png" alt="icon Spotify" />
-      </span>
-      <span>Spotify</span>
-      <span class="example-spacer"></span>
-      <mat-icon class="example-icon">account_circle</mat-icon>
-      <span>Jhonny Zapata </span>
-      <button mat-icon-button [matMenuTriggerFor]="menu">
-        <mat-icon>more_vert</mat-icon>
+  <mat-toolbar-row>
+    <span>
+      <img src="../../../assets/img/Spotify.png" alt="icon Spotify" />
+    </span>
+    <span>Spotify</span>
+    <span class="example-spacer"></span>
+    <mat-icon class="example-icon">account_circle</mat-icon>
+    <span>Jhonny Zapata </span>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="logOut()">
+        <mat-icon>power_settings_new</mat-icon>
+        <span>Cerrar sesion</span>
       </button>
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item>
-          <mat-icon>power_settings_new</mat-icon>
-          <span>Cerrar sesion</span>
-        </button>
-      </mat-menu>
-    </mat-toolbar-row>
-  </mat-toolbar>
+    </mat-menu>
+  </mat-toolbar-row>
+</mat-toolbar>
 
-  <!-- Toolbar Secundario -->
-  <mat-toolbar class="options">
-    <mat-toolbar-row>
-      <mat-form-field class="two-columns">
-        <input matInput placeholder=" Search" type="text" />
-        <mat-icon matPrefix>search</mat-icon>
-      </mat-form-field>
+<!-- Toolbar Secundario -->
+<mat-toolbar class="options">
+  <mat-toolbar-row>
+    <mat-form-field>
+      <input matInput placeholder="Search" type="text" />
+      <mat-icon matPrefix>search</mat-icon>
+    </mat-form-field>
 
-      <span class="example-spacer"></span>
+    <span class="example-spacer"></span>
 
-      <button mat-button [matMenuTriggerFor]="options">
-        <mat-icon>settings_applications</mat-icon>
-        Mostrar
-        <mat-icon>keyboard_arrow_down</mat-icon>
+    <button mat-button [matMenuTriggerFor]="options">
+      <mat-icon>settings_applications</mat-icon>
+      Mostrar
+      <mat-icon>keyboard_arrow_down</mat-icon>
+    </button>
+    <mat-menu #options="matMenu">
+      <button mat-menu-item>
+        <mat-icon>list</mat-icon>
+        <span>Lista</span>
       </button>
-      <mat-menu #options="matMenu">
-        <button mat-menu-item>
-          <mat-icon>list</mat-icon>
-          <span>Lista</span>
-        </button>
-        <button mat-menu-item>
-          <mat-icon>grid_on</mat-icon>
-          <span>Grid</span>
-        </button>
-      </mat-menu>
-    </mat-toolbar-row>
-  </mat-toolbar>
+      <button mat-menu-item>
+        <mat-icon>grid_on</mat-icon>
+        <span>Grid</span>
+      </button>
+    </mat-menu>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<!-- Albunes -->
+<div class="container-form">
+  <div class="album">
+      <app-album></app-album>
+  </div>
+  <div class="album">
+      <app-album></app-album>
+  </div>
+
+</div>

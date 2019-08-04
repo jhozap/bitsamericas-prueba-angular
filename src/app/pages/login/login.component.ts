@@ -33,8 +33,9 @@ export class LoginComponent implements OnInit {
 
   }
 
-  spinner() {
-    this.showSpinner = !this.showSpinner;
+  cancel() {
+    this.user = '';
+    this.password = '';
   }
 
 }

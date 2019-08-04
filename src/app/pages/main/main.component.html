@@ -1,9 +1,10 @@
+<app-toolbar></app-toolbar>
 <div class="content">
   <!-- Toolbar Secundario -->
   <mat-toolbar class="options">
     <mat-toolbar-row>
       <mat-form-field>
-        <input matInput placeholder="Search" type="text" />
+        <input matInput placeholder="Search" type="text" [(ngModel)]="term" (keydown.enter)="Search()"/>
         <mat-icon matPrefix>search</mat-icon>
       </mat-form-field>
 
@@ -29,12 +30,22 @@
 
   <!-- Albunes -->
   <div class="container-form">
-    <div class="row">
+    <div *ngIf="albumes?.length > 0" class="row">
       <app-album
         #child
         *ngFor="let album of albumes"
         [album]="album"
       ></app-album>
+    </div>
+    <div *ngIf="albumes?.length === 0" class="row">
+      <mat-grid-list cols="4" rowHeight="100px">
+        <mat-grid-tile
+          [colspan]="4"
+          [rowspan]="2"
+        >
+          No Result Set
+        </mat-grid-tile>
+      </mat-grid-list>
     </div>
   </div>
 </div>

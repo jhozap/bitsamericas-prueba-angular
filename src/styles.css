@@ -105,3 +105,36 @@ mat-spinner > svg {
   flex-wrap: wrap;
   box-sizing: border-box;
 }
+
+.col-3 {
+  width: 30%;
+}
+
+.col-7 {
+  width: 70%;
+}
+
+.center {
+  width: 90%;
+  max-height: 450px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+mat-grid-list {
+  width: 100%;
+}
+
+
+.mat-list-base .mat-list-item, .mat-list-base .mat-list-option {
+  height: auto !important;
+}
+
+.mat-list-item-content {
+  margin-top: 10px;
+  height: 80px !important;
+}
+
+.audio-list {
+  width: 100%;
+}

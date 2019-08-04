@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { AlbumsService } from 'src/app/services/albums.service';
 import { MusicService } from 'src/app/services/music.service';
 import { Songs } from 'src/app/models/Songs.class';
+import { Album } from 'src/app/models/Album.class';
 
 @Component({
   selector: 'app-detail',
@@ -12,7 +13,9 @@ import { Songs } from 'src/app/models/Songs.class';
 export class DetailComponent implements OnInit {
 
   id: number;
+  album: Album;
   songs: Songs[] = [];
+  favorite = false;
 
   constructor(private route: ActivatedRoute,
               private albumsService: AlbumsService,
@@ -32,8 +35,15 @@ export class DetailComponent implements OnInit {
   getAlbum(): void {
     this.albumsService.getAlbum(this.id)
       .subscribe(
-        albumes => this.getSongs(albumes.id)
+        album => {
+          this.album = album;
+          this.getSongs(album.id);
+        }
       );
+  }
+
+  setFavorite() {
+    this.favorite = !this.favorite;
   }
 
   getSongs(id: number): void {

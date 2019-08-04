@@ -18,6 +18,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { ToastrModule } from 'ngx-toastr';
 import { MemoryDataAlbumService } from './services/memory-db/memory-data.service';
+import { MatTableModule } from '@angular/material/table';
+import { MatListModule } from '@angular/material/list';
 import { MainComponent } from './pages/main/main.component';
 import { AlbumComponent } from './pages/album/album.component';
 import { DetailComponent } from './pages/detail/detail.component';
@@ -40,10 +42,12 @@ import { ToolbarComponent } from './pages/toolbar/toolbar.component';
     MatToolbarModule,
     MatFormFieldModule,
     MatButtonModule,
+    MatTableModule,
     MatProgressSpinnerModule,
     MatGridListModule,
     MatCardModule,
     MatMenuModule,
+    MatListModule,
     MatIconModule,
     FormsModule,
     HttpClientModule,

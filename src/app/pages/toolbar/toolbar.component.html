@@ -1,0 +1,23 @@
+<!-- Toolbar Principal -->
+<div class="principal-header">
+  <mat-toolbar color="secondary">
+    <mat-toolbar-row>
+      <span>
+        <img src="assets/img/Spotify.png" alt="icon Spotify" />
+      </span>
+      <span>Spotify</span>
+      <span class="example-spacer"></span>
+      <mat-icon class="example-icon">account_circle</mat-icon>
+      <span>Jhonny Zapata </span>
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="logOut()">
+          <mat-icon>power_settings_new</mat-icon>
+          <span>Cerrar sesion</span>
+        </button>
+      </mat-menu>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</div>

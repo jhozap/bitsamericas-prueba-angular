@@ -25,9 +25,7 @@ mat-card-content > a > img {
 }
 
 .container-form {
-  display: flex;
   padding: 2rem;
-  margin-right: 1rem;
   background-color: #303030;
   color: white;
 }
@@ -54,10 +52,10 @@ span > img {
 }
 
 .album {
-  max-width: 24.2%;
-  min-width: 24.2%;
+  max-width: 24.4%;
+  min-width: 24.4%;
   margin-right: 0.5rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .container-login {
@@ -71,6 +69,12 @@ span > img {
   max-width: 5rem;
   margin-left: auto;
   margin-right: auto;
+}
+
+app-album {
+  flex-wrap: wrap;
+  margin-right: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 mat-spinner {
@@ -92,5 +96,12 @@ mat-spinner > svg {
 }
 
 .content {
-  margin-top: 65px;
+  margin-top: 90px;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
 }

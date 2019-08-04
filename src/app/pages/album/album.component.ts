@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Album } from 'src/app/models/Album.class';
 
 @Component({
@@ -8,10 +8,20 @@ import { Album } from 'src/app/models/Album.class';
 })
 export class AlbumComponent implements OnInit {
   @Input() album: Album;
+
+  visible = true;
+  favorite = false;
   constructor() { }
 
   ngOnInit() {
-    console.log(this.album);
+  }
+
+  setFavorite() {
+    this.favorite = !this.favorite;
+  }
+
+  hideItem() {
+    this.visible = false;
   }
 
 }

@@ -1,33 +1,43 @@
-<mat-toolbar color="secondary">
-  <mat-toolbar-row>
-    <button mat-mini-fab color="primary" title="Reproducir">
-      <mat-icon>play_arrow</mat-icon>
-    </button>
-    &nbsp;
-    <button mat-mini-fab color="primary" title="Favoritos">
-      <mat-icon>favorite</mat-icon>
-    </button>
-    <span class="example-spacer"></span>
-    <button mat-mini-fab color="primary" [matMenuTriggerFor]="optionsAlbum">
-      <mat-icon>settings</mat-icon>
-    </button>
-    <mat-menu #optionsAlbum="matMenu">
-      <button mat-menu-item>
-        <mat-icon>visibility_off</mat-icon>
-        <span>Ocultar Album</span>
-      </button>
-    </mat-menu>
-  </mat-toolbar-row>
-</mat-toolbar>
-<mat-card>
-  <mat-card-content>
-    <a href="">
-      <img
-        [src]="album.portada"
-        alt="Photo for example"
-      />
-    </a>
-    <p>Album: {{album.album}}</p>
-    <p>Artista: {{album.artista}}</p>
-  </mat-card-content>
-</mat-card>
+<div *ngIf="visible">
+  <div>
+    <mat-toolbar color="secondary">
+      <mat-toolbar-row>
+        <!-- <button mat-mini-fab color="primary" title="Reproducir">
+          <mat-icon>play_arrow</mat-icon>
+        </button> -->
+        &nbsp;
+        <button mat-mini-fab *ngIf="favorite" (click)="setFavorite()" color="primary" title="Favoritos">
+          <mat-icon>favorite</mat-icon>
+        </button>
+        <button mat-mini-fab *ngIf="!favorite" (click)="setFavorite()" color="primary" title="Favoritos">
+            <mat-icon>favorite_border</mat-icon>
+          </button>
+        <span class="example-spacer"></span>
+        <button mat-mini-fab color="primary" [matMenuTriggerFor]="optionsAlbum">
+          <mat-icon>settings</mat-icon>
+        </button>
+        <mat-menu #optionsAlbum="matMenu">
+          <button mat-menu-item (click)="hideItem()">
+            <mat-icon>visibility_off</mat-icon>
+            <span>Ocultar Album</span>
+          </button>
+        </mat-menu>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-card>
+      <mat-card-content>
+        <a routerLink="/detail/{{ album.id }}">
+          <img [src]="album.portada" alt="Photo for example" />
+        </a>
+        <p>Album: {{ album.album }}</p>
+        <p>Artista: {{ album.artista }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <audio controls>
+          <source [src]="album.principalSong" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

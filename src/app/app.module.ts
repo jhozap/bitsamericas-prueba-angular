@@ -14,6 +14,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { ToastrModule } from 'ngx-toastr';
 import { MemoryDataAlbumService } from './services/memory-db/memory-data.service';
@@ -22,6 +23,7 @@ import { AlbumComponent } from './pages/album/album.component';
 import { DetailComponent } from './pages/detail/detail.component';
 import { LoginComponent } from './pages/login/login.component';
 import { MemoryDataMusicService } from './services/memory-db/memory-data-music.service';
+import { ToolbarComponent } from './pages/toolbar/toolbar.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import { MemoryDataMusicService } from './services/memory-db/memory-data-music.s
     MainComponent,
     AlbumComponent,
     DetailComponent,
-    LoginComponent
+    LoginComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +41,7 @@ import { MemoryDataMusicService } from './services/memory-db/memory-data-music.s
     MatFormFieldModule,
     MatButtonModule,
     MatProgressSpinnerModule,
+    MatGridListModule,
     MatCardModule,
     MatMenuModule,
     MatIconModule,

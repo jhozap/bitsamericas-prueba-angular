@@ -23,11 +23,11 @@
   <mat-card-content>
     <a href="">
       <img
-        src=""
+        [src]="album.portada"
         alt="Photo for example"
       />
     </a>
-    <p>Album: aaaaaaaaaaaaaaaaaaaaaa</p>
-    <p>Artista: aaaaaaaaaaaaaaaaaa</p>
+    <p>Album: {{album.album}}</p>
+    <p>Artista: {{album.artista}}</p>
   </mat-card-content>
 </mat-card>

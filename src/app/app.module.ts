@@ -12,6 +12,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { ToastrModule } from 'ngx-toastr';
@@ -41,14 +42,12 @@ import { MemoryDataMusicService } from './services/memory-db/memory-data-music.s
     MatMenuModule,
     MatIconModule,
     FormsModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     HttpClientInMemoryWebApiModule.forRoot(
       MemoryDataAlbumService, { dataEncapsulation: false }
-    ),
-    HttpClientInMemoryWebApiModule.forRoot(
-      MemoryDataMusicService, { dataEncapsulation: false }
     )
   ],
   providers: [],

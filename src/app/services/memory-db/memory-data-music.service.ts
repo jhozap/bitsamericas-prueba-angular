@@ -6,7 +6,7 @@ import { InMemoryDbService } from 'angular-in-memory-web-api';
 })
 export class MemoryDataMusicService implements InMemoryDbService {
   createDb() {
-    const Albunes = [
+    const songs = [
       { id: 1, idAlbum: 1, song: 'Symphony No. 40', date: '1788' },
       { id: 2, idAlbum: 1, song: 'Le nozze di Figaro', date: '1786' },
       { id: 3, idAlbum: 2, song: 'Para Elisa', date: '1810' },
@@ -18,7 +18,7 @@ export class MemoryDataMusicService implements InMemoryDbService {
       { id: 9, idAlbum: 5, song: 'Bobo', date: '2016' },
       { id: 10, idAlbum: 5, song: 'Sigo Extrañandote', date: '2016' }
     ];
-    return {Albunes};
+    return {songs};
   }
 
   constructor() { }
